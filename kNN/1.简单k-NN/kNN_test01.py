@@ -12,7 +12,7 @@ Returns:
 	group - 数据集
 	labels - 分类标签
 Modify:
-	2017-07-13
+	2019-08-18
 """
 def createDataSet():
 	#四组二维特征
@@ -33,11 +33,11 @@ Returns:
 	sortedClassCount[0][0] - 分类结果
 
 Modify:
+	2019-08-18 by zzq
 	2017-11-09 by Cugtyt 
 		* GitHub(https://github.com/Cugtyt) 
 		* Email(cugtyt@qq.com)
 		Use list comprehension and Counter to simplify code
-	2017-07-13
 """
 def classify0(inx, dataset, labels, k):
 	# 计算距离
@@ -48,7 +48,7 @@ def classify0(inx, dataset, labels, k):
 	label = collections.Counter(k_labels).most_common(1)[0][0]
 	return label
 
-if __name__ == '__main__':
+def main():
 	#创建数据集
 	group, labels = createDataSet()
 	#测试集
@@ -57,3 +57,4 @@ if __name__ == '__main__':
 	test_class = classify0(test, group, labels, 3)
 	#打印分类结果
 	print(test_class)
+main()
